@@ -1,17 +1,21 @@
 import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-portrait.jpg";
+import heroVideo from "@/assets/hero-video.mp4";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-end bg-navy overflow-hidden">
-      {/* Background image with overlay */}
+      {/* Background video */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Executive woman in luxury office"
-          className="w-full h-full object-cover object-top"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(215,55%,18%)] via-[hsl(215,55%,18%,0.85)] to-transparent" />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-[hsl(215,55%,18%,0.75)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(215,55%,18%)] via-transparent to-[hsl(215,55%,18%,0.3)]" />
       </div>
 
