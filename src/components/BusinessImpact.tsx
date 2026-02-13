@@ -163,8 +163,8 @@ const BusinessImpact = () => {
             </motion.div>
           </motion.div>
 
-          {/* Subtle dark overlay for text readability */}
-          <div className="absolute inset-0 bg-navy/30" />
+          {/* Bottom gradient for text readability */}
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-navy/70 via-navy/40 to-transparent" />
 
           {/* Decorative vertical line */}
           <motion.div
@@ -199,7 +199,7 @@ const BusinessImpact = () => {
               Measurable{" "}
               <em className="italic font-light text-ivory/70">Impact</em>
             </h2>
-            <p className="font-body text-[13px] font-extralight text-ivory/35 leading-[1.9] tracking-wide mt-6 max-w-xs hidden lg:block">
+            <p className="font-body text-[13px] font-extralight text-ivory leading-[1.9] tracking-wide mt-6 max-w-xs hidden lg:block">
               Data-driven outcomes that demonstrate the strategic value of inclusive leadership.
             </p>
           </motion.div>
