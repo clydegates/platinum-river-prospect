@@ -75,7 +75,7 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
           {pillar.title}
         </motion.h3>
 
-        <p className="font-body text-[13px] font-extralight text-ivory leading-[2] tracking-wide mb-8">
+        <p className="font-body text-[13px] font-extralight text-ivory leading-[2] tracking-wide mb-8 text-justify">
           {pillar.description}
         </p>
 
