@@ -48,7 +48,7 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
       className="group relative overflow-hidden border border-ivory/[0.08]"
     >
       {/* Image area */}
-      <div className="relative h-[280px] md:h-[340px] overflow-hidden">
+      <div className="relative h-[238px] md:h-[289px] overflow-hidden">
         <motion.div style={{ y: imageY }} className="absolute inset-0 -top-[10%] -bottom-[10%]">
           <img
             src={pillar.image}
