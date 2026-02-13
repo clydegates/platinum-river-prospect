@@ -42,7 +42,7 @@ const LeadershipPreview = () => {
   };
 
   return (
-    <section id="leadership" className="relative py-20 md:py-28 bg-ivory-dark overflow-hidden">
+    <section id="leadership" className="relative py-12 md:py-16 bg-ivory-dark overflow-hidden">
       {/* Decorative corners */}
       <motion.div
         initial={{ opacity: 0 }}
