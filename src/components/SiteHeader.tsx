@@ -6,7 +6,7 @@ const SiteHeader = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-ivory/70 backdrop-blur-lg"
+      className="fixed top-0 left-0 right-0 z-50 bg-transparent"
     >
       <div className="max-w-7xl mx-auto px-8 md:px-16 py-5 flex items-center justify-between">
         <div className="font-display text-2xl text-navy tracking-wide">
