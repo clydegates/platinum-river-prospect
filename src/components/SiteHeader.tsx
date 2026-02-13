@@ -3,29 +3,30 @@ import { motion } from "framer-motion";
 const SiteHeader = () => {
   return (
     <motion.header
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.5 }}
+      className="fixed top-0 left-0 right-0 z-50 bg-ivory/70 backdrop-blur-lg"
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
-        <div className="font-display text-xl text-navy tracking-wide">
+      <div className="max-w-7xl mx-auto px-8 md:px-16 py-5 flex items-center justify-between">
+        <div className="font-display text-2xl text-navy tracking-wide">
           Platinum River Elite
         </div>
-        <nav className="hidden md:flex items-center gap-8 font-body text-sm text-muted-foreground">
-          <a href="#about" className="hover:text-navy transition-colors">About</a>
-          <a href="#services" className="hover:text-navy transition-colors">Services</a>
-          <a href="#impact" className="hover:text-navy transition-colors">Impact</a>
+        <nav className="hidden md:flex items-center gap-10 font-body text-xs tracking-[0.15em] uppercase text-warm-gray">
+          <a href="#about" className="hover:text-navy transition-colors duration-300">About</a>
+          <a href="#services" className="hover:text-navy transition-colors duration-300">Services</a>
+          <a href="#impact" className="hover:text-navy transition-colors duration-300">Impact</a>
+          <a href="#leadership" className="hover:text-navy transition-colors duration-300">Leadership</a>
           <a
             href="#contact"
-            className="px-5 py-2 bg-navy text-primary-foreground rounded-sm text-sm font-medium hover:bg-navy-light transition-colors"
+            className="ml-4 px-6 py-2.5 bg-navy text-ivory font-body text-xs tracking-[0.15em] uppercase hover:bg-navy-soft transition-colors duration-300"
           >
             Contact
           </a>
         </nav>
         <a
           href="#contact"
-          className="md:hidden px-4 py-2 bg-navy text-primary-foreground rounded-sm text-xs font-body font-medium"
+          className="md:hidden px-5 py-2 bg-navy text-ivory font-body text-xs tracking-[0.15em] uppercase"
         >
           Contact
         </a>
