@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import heroPortrait from "@/assets/hero-portrait.jpg";
+import { Link } from "react-router-dom";
+import catherineImage from "@/assets/catherine-laurent.jpg";
 
 const LeadershipPreview = () => {
   return (
@@ -14,7 +15,8 @@ const LeadershipPreview = () => {
       />
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-12 gap-12 md:gap-20 items-center">
+        <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
+          {/* Left: Text + CEO portrait */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -34,15 +36,40 @@ const LeadershipPreview = () => {
             <p className="font-body text-base font-extralight text-foreground/55 leading-[1.9] mb-12 tracking-wide">
               Platinum River Elite is led by senior advisors with decades of experience across executive leadership, organizational strategy, and global workforce transformation.
             </p>
-            <a
-              href="#"
+
+            {/* CEO card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="flex items-center gap-6 mb-12"
+            >
+              <div className="relative w-20 h-20 flex-shrink-0 overflow-hidden">
+                <img
+                  src={catherineImage}
+                  alt="Catherine Laurent-Meister"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <p className="font-display text-lg text-navy leading-tight">Catherine Laurent-Meister</p>
+                <p className="font-body text-[10px] tracking-[0.3em] uppercase text-warm-gray mt-1">
+                  Chief Executive Officer
+                </p>
+              </div>
+            </motion.div>
+
+            <Link
+              to="/leadership"
               className="group inline-flex items-center gap-4 font-body text-[11px] tracking-[0.25em] uppercase text-navy border-b border-navy/30 pb-2 hover:border-navy transition-colors duration-500"
             >
               Meet the Team
               <span className="inline-block w-4 h-[1px] bg-navy transition-all duration-500 group-hover:w-6" />
-            </a>
+            </Link>
           </motion.div>
 
+          {/* Right: Quote card */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -66,10 +93,21 @@ const LeadershipPreview = () => {
                   "The most overlooked competitive advantage in any organization is the strategic expertise of its most experienced women."
                 </blockquote>
                 <div className="flex items-center gap-6">
-                  <div className="w-10 h-[1px] bg-ivory/15" />
-                  <p className="font-body text-[10px] tracking-[0.35em] uppercase text-ivory/35">
-                    Founding Team
-                  </p>
+                  <div className="w-12 h-12 overflow-hidden flex-shrink-0">
+                    <img
+                      src={catherineImage}
+                      alt="Catherine Laurent-Meister"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-body text-[11px] tracking-[0.2em] uppercase text-ivory/60">
+                      Catherine Laurent-Meister
+                    </p>
+                    <p className="font-body text-[10px] tracking-[0.35em] uppercase text-ivory/30 mt-0.5">
+                      CEO & Founder
+                    </p>
+                  </div>
                 </div>
               </div>
               {/* Decorative offset border */}
