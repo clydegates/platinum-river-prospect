@@ -8,7 +8,7 @@ import frederiqueImage from "@/assets/frederique-cao.jpg";
 import chiefWiImage from "@/assets/chief-wi-officer.jpg";
 
 const leaders = [
-  { name: "Beatrice", role: "CEO & Co-Founder", image: beatriceImage },
+  { name: "Béatrice", role: "CEO & Co-Founder", image: beatriceImage },
   { name: "Maria Elena", role: "COO & Co-Founder", image: mariaElenaImage },
   { name: "Frédérique", role: "Chief Advisory Officer", image: frederiqueImage },
   { name: "Sophie", role: "Chief WI Officer", image: chiefWiImage },
