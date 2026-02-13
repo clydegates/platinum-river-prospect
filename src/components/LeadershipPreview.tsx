@@ -67,7 +67,7 @@ const LeadershipPreview = () => {
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            <blockquote className="font-display text-xl md:text-2xl text-navy/60 leading-[1.6] italic">
+            <blockquote className="font-display text-2xl md:text-3xl text-navy/60 leading-[1.6] italic">
               "My vision for Platinum River Elite is for this formidable company to be the driving force supporting women 50+ influence in the world."
             </blockquote>
             <p className="font-body text-[9px] tracking-[0.4em] uppercase text-warm-gray mt-4">
