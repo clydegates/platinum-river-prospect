@@ -4,62 +4,88 @@ const impacts = [
   {
     number: "01",
     title: "Retention of Senior Talent",
-    description: "Preserving institutional knowledge and leadership continuity through strategic engagement of experienced professionals.",
+    description:
+      "Preserving institutional knowledge and leadership continuity through strategic engagement of experienced professionals.",
   },
   {
     number: "02",
     title: "Reduction of Turnover Costs",
-    description: "Minimizing the significant financial burden of replacing seasoned leaders with targeted retention frameworks.",
+    description:
+      "Minimizing the significant financial burden of replacing seasoned leaders with targeted retention frameworks.",
   },
   {
     number: "03",
     title: "ESG & Governance Alignment",
-    description: "Strengthening environmental, social, and governance positioning through measurable workforce inclusivity initiatives.",
+    description:
+      "Strengthening environmental, social, and governance positioning through measurable workforce inclusivity initiatives.",
   },
   {
     number: "04",
     title: "Leadership Stability",
-    description: "Building resilient leadership pipelines that leverage decades of accumulated strategic expertise.",
+    description:
+      "Building resilient leadership pipelines that leverage decades of accumulated strategic expertise.",
   },
 ];
 
 const BusinessImpact = () => {
   return (
-    <section id="impact" className="py-28 md:py-40 px-8 md:px-16 bg-ivory">
-      <div className="max-w-7xl mx-auto">
+    <section id="impact" className="relative py-32 md:py-48 px-8 md:px-16 lg:px-20 bg-ivory overflow-hidden">
+      {/* Decorative */}
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 2, ease: [0.25, 0.1, 0.25, 1] }}
+        className="absolute top-0 left-0 right-0 h-[1px] bg-navy/[0.06] origin-left"
+      />
+
+      <div className="relative max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="mb-20 md:mb-28"
+          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mb-24 md:mb-32"
         >
-          <div className="w-10 h-[1px] bg-navy/30 mb-8" />
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-warm-gray mb-4">
-            Why It Matters
-          </p>
-          <h2 className="text-4xl md:text-5xl font-display text-navy leading-[1.15] max-w-lg">
-            Measurable Business Impact
+          <div className="flex items-center gap-6 mb-10">
+            <div className="w-16 h-[1px] bg-navy/20" />
+            <p className="font-body text-[10px] tracking-[0.4em] uppercase text-warm-gray">
+              Why It Matters
+            </p>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-display text-navy leading-[1.1] max-w-lg tracking-[-0.01em]">
+            Measurable Business{" "}
+            <em className="italic font-light">Impact</em>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-x-20 gap-y-16">
+        <div className="grid md:grid-cols-2 gap-x-20 lg:gap-x-28 gap-y-0">
           {impacts.map((item, index) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.7, delay: index * 0.1 }}
-              className="border-t border-navy/10 pt-8"
+              transition={{
+                duration: 0.9,
+                delay: index * 0.12,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
+              className="group py-10 md:py-12 border-t border-navy/[0.08] hover:border-navy/20 transition-colors duration-700"
             >
-              <span className="font-display text-sm text-warm-gray mb-4 block">{item.number}</span>
-              <h3 className="text-2xl md:text-3xl font-display text-navy mb-4">
-                {item.title}
-              </h3>
-              <p className="font-body text-base font-extralight text-foreground/60 leading-[1.8]">
-                {item.description}
-              </p>
+              <div className="flex items-start gap-6">
+                <span className="font-display text-5xl lg:text-6xl text-navy/[0.06] group-hover:text-navy/[0.12] transition-colors duration-700 leading-none flex-shrink-0">
+                  {item.number}
+                </span>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-display text-navy mb-4 leading-[1.2]">
+                    {item.title}
+                  </h3>
+                  <p className="font-body text-base font-extralight text-foreground/55 leading-[1.9] tracking-wide">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
