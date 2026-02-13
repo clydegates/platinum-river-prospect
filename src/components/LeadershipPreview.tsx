@@ -121,22 +121,24 @@ const LeadershipPreview = () => {
               }}
               className="group flex-shrink-0 w-[260px] md:w-[280px] lg:w-[290px] cursor-pointer"
             >
-              <div className="bg-navy rounded-2xl overflow-hidden p-3 pb-6 transition-shadow duration-700 hover:shadow-[0_8px_40px_-12px_hsl(var(--navy)/0.4)]">
-                <div className="relative h-[300px] md:h-[340px] lg:h-[360px] overflow-hidden rounded-xl">
+              <div className="bg-navy rounded-2xl overflow-hidden transition-shadow duration-700 hover:shadow-[0_8px_40px_-12px_hsl(var(--navy)/0.4)]">
+                <div className="relative h-[380px] md:h-[420px] lg:h-[440px] overflow-hidden rounded-2xl">
                   <img
                     src={leader.image}
                     alt={leader.name}
                     className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
                   />
-                </div>
-
-                <div className="pt-5 px-2 text-center">
-                  <p className="font-display text-xl md:text-2xl text-ivory leading-tight mb-1.5">
-                    {leader.name}
-                  </p>
-                  <p className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/40">
-                    {leader.role}
-                  </p>
+                  {/* Gradient blur overlay at bottom */}
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy via-navy/80 to-transparent" />
+                  
+                  <div className="absolute bottom-0 inset-x-0 p-5 text-left">
+                    <p className="font-display text-xl md:text-2xl text-ivory leading-tight mb-1">
+                      {leader.name}
+                    </p>
+                    <p className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/45">
+                      {leader.role}
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
