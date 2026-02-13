@@ -1,60 +1,77 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
-import { useRef } from "react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
 import catherineImage from "@/assets/catherine-laurent.jpg";
+import isabelleImage from "@/assets/isabelle-fournier.jpg";
+import elenaImage from "@/assets/elena-vasquez.jpg";
+import sarahImage from "@/assets/sarah-chen.jpg";
+import margaretImage from "@/assets/margaret-okafor.jpg";
+import anneImage from "@/assets/anne-sophie-bertrand.jpg";
+
+const leaders = [
+  { name: "Catherine Laurent-Meister", role: "Chief Executive Officer", image: catherineImage },
+  { name: "Dr. Isabelle Fournier", role: "Chief Operating Officer", image: isabelleImage },
+  { name: "Prof. Elena Vasquez-Stern", role: "Director of Research", image: elenaImage },
+  { name: "Sarah Chen-Nakamura", role: "Director of Global Partnerships", image: sarahImage },
+  { name: "Dr. Margaret Okafor", role: "Head of Training Programs", image: margaretImage },
+  { name: "Anne-Sophie Bertrand", role: "Head of Advisory", image: anneImage },
+];
 
 const LeadershipPreview = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const portraitY = useTransform(scrollYProgress, [0, 1], ["30px", "-30px"]);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateScrollState = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 10);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 10);
+  };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", updateScrollState, { passive: true });
+    updateScrollState();
+    return () => el.removeEventListener("scroll", updateScrollState);
+  }, []);
+
+  const scroll = (direction: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = el.querySelector("div")?.offsetWidth ?? 300;
+    el.scrollBy({ left: direction === "left" ? -cardWidth : cardWidth, behavior: "smooth" });
+  };
 
   return (
-    <section id="leadership" ref={sectionRef} className="relative py-32 md:py-48 px-8 md:px-16 lg:px-20 bg-ivory-dark overflow-hidden">
-      {/* Decorative corner accents */}
+    <section id="leadership" className="relative py-32 md:py-48 bg-ivory-dark overflow-hidden">
+      {/* Decorative corners */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.06 }}
         viewport={{ once: true }}
         transition={{ duration: 2 }}
-        className="absolute bottom-24 left-16 w-32 h-[1px] bg-navy hidden lg:block"
+        className="absolute top-16 right-16 w-28 h-[1px] bg-navy hidden lg:block"
       />
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.06 }}
         viewport={{ once: true }}
         transition={{ duration: 2 }}
-        className="absolute bottom-24 left-16 w-[1px] h-32 bg-navy hidden lg:block"
-      />
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.06 }}
-        viewport={{ once: true }}
-        transition={{ duration: 2 }}
-        className="absolute top-16 right-16 w-32 h-[1px] bg-navy hidden lg:block"
-      />
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.06 }}
-        viewport={{ once: true }}
-        transition={{ duration: 2 }}
-        className="absolute top-16 right-16 w-[1px] h-32 bg-navy hidden lg:block"
+        className="absolute top-16 right-16 w-[1px] h-28 bg-navy hidden lg:block"
       />
 
-      <div className="relative max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-12 gap-16 md:gap-20 items-center">
-          {/* Left: Text + CEO portrait */}
+      {/* Header + Quote */}
+      <div className="px-8 md:px-16 lg:px-20 max-w-7xl mx-auto mb-20 md:mb-28">
+        <div className="grid md:grid-cols-2 gap-16 items-end">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="md:col-span-5"
           >
-            {/* Header */}
             <div className="flex items-center gap-6 mb-10">
               <motion.div
                 initial={{ width: 0 }}
@@ -67,158 +84,105 @@ const LeadershipPreview = () => {
                 Our Team
               </p>
             </div>
-
-            <h2 className="text-4xl md:text-5xl lg:text-[3.75rem] font-display text-navy leading-[1.08] mb-8 tracking-[-0.01em]">
+            <h2 className="text-4xl md:text-5xl lg:text-[3.75rem] font-display text-navy leading-[1.08] tracking-[-0.01em]">
               Leadership
             </h2>
+          </motion.div>
 
-            <p className="font-body text-[13.5px] font-extralight text-foreground/45 leading-[2.1] mb-16 tracking-wide">
-              Platinum River Elite is led by senior advisors with decades of experience across executive leadership, organizational strategy, and global workforce transformation.
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
+            <blockquote className="font-display text-xl md:text-2xl text-navy/60 leading-[1.6] italic">
+              "The most overlooked competitive advantage in any organization is the strategic expertise of its most experienced women."
+            </blockquote>
+            <p className="font-body text-[9px] tracking-[0.4em] uppercase text-warm-gray mt-4">
+              — Catherine Laurent-Meister
             </p>
+          </motion.div>
+        </div>
+      </div>
 
-            {/* CEO card — elevated */}
+      {/* Carousel */}
+      <div className="relative">
+        {/* Scroll container */}
+        <div
+          ref={scrollRef}
+          className="flex gap-[1px] overflow-x-auto scrollbar-hide pl-8 md:pl-16 lg:pl-20 pr-8 md:pr-16 lg:pr-20"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {leaders.map((leader, index) => (
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              key={leader.name}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="group flex items-center gap-6 mb-16 p-6 md:p-8 border border-navy/[0.08] hover:border-navy/15 transition-all duration-1000 backdrop-blur-sm bg-white/20"
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{
+                duration: 1,
+                delay: index * 0.1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="group flex-shrink-0 w-[260px] md:w-[300px] lg:w-[320px] relative overflow-hidden cursor-pointer"
             >
-              {/* Portrait with parallax */}
-              <motion.div
-                style={{ y: portraitY }}
-                className="relative w-24 h-24 md:w-28 md:h-28 flex-shrink-0 overflow-hidden"
-              >
+              {/* Portrait */}
+              <div className="relative h-[340px] md:h-[400px] lg:h-[430px] overflow-hidden bg-navy/5">
                 <img
-                  src={catherineImage}
-                  alt="Catherine Laurent-Meister"
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  src={leader.image}
+                  alt={leader.name}
+                  className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
                 />
-                <div className="absolute inset-0 border border-ivory/[0.12]" />
-              </motion.div>
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent" />
 
-              <div>
-                <p className="font-display text-xl md:text-2xl text-navy leading-tight">
-                  Catherine Laurent-Meister
+                {/* Hover overlay with subtle line */}
+                <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/10 transition-colors duration-700" />
+                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-ivory/0 group-hover:bg-ivory/20 transition-colors duration-700" />
+              </div>
+
+              {/* Info */}
+              <div className="p-6 md:p-8 bg-navy">
+                <p className="font-display text-lg md:text-xl text-ivory leading-tight mb-2">
+                  {leader.name}
                 </p>
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: 48 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="h-[1px] bg-navy/20 my-2"
-                />
-                <p className="font-body text-[9px] tracking-[0.4em] uppercase text-warm-gray">
-                  Chief Executive Officer
+                <p className="font-body text-[9px] tracking-[0.35em] uppercase text-ivory/35">
+                  {leader.role}
                 </p>
               </div>
             </motion.div>
+          ))}
+        </div>
 
-            {/* CTA — refined */}
-            <Link
-              to="/leadership"
-              className="group inline-flex items-center gap-4 cursor-pointer"
-            >
-              <span className="font-body text-[10px] tracking-[0.35em] uppercase text-navy group-hover:text-navy/70 transition-colors duration-700">
-                Meet the Team
-              </span>
-              <div className="relative w-10 h-[1px] bg-navy/20 group-hover:w-14 group-hover:bg-navy/40 transition-all duration-700">
-                <ArrowRight className="absolute -right-1 -top-[5px] w-3 h-3 text-navy/30 group-hover:text-navy/60 transition-all duration-700" />
-              </div>
-            </Link>
-          </motion.div>
-
-          {/* Right: Quote card — luxury elevation */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="md:col-span-6 md:col-start-7"
+        {/* Navigation arrows */}
+        <div className="px-8 md:px-16 lg:px-20 max-w-7xl mx-auto mt-12 flex items-center justify-between">
+          <Link
+            to="/leadership"
+            className="group inline-flex items-center gap-4 cursor-pointer"
           >
-            <div className="relative">
-              {/* Main quote card with layers */}
-              <motion.div
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.8 }}
-                className="relative bg-navy p-12 md:p-16 lg:p-20 border border-ivory/[0.08] overflow-hidden group"
-              >
-                {/* Background gradient accent */}
-                <div className="absolute inset-0 bg-gradient-to-br from-navy/0 via-transparent to-navy/20 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-
-                {/* Decorative corner elements */}
-                <div className="absolute top-6 left-8 w-0 h-0 group-hover:w-8 group-hover:h-8 transition-all duration-700 pointer-events-none">
-                  <div className="absolute top-0 left-0 w-full h-[1px] bg-ivory/20" />
-                  <div className="absolute top-0 left-0 w-[1px] h-full bg-ivory/20" />
-                </div>
-                <div className="absolute bottom-6 right-8 w-0 h-0 group-hover:w-8 group-hover:h-8 transition-all duration-700 pointer-events-none">
-                  <div className="absolute bottom-0 right-0 w-full h-[1px] bg-ivory/20" />
-                  <div className="absolute bottom-0 right-0 w-[1px] h-full bg-ivory/20" />
-                </div>
-
-                {/* Quotation mark — subtle */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 0.08 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 2, delay: 0.5 }}
-                  className="absolute top-6 right-12 font-display text-[140px] text-ivory leading-none select-none"
-                >
-                  "
-                </motion.div>
-
-                {/* Quote text */}
-                <blockquote className="relative z-10 font-display text-2xl md:text-3xl lg:text-[2.15rem] text-ivory leading-[1.6] italic mb-12 tracking-[-0.01em]">
-                  "The most overlooked competitive advantage in any organization is the strategic expertise of its most experienced women."
-                </blockquote>
-
-                {/* Separator line */}
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: 40 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.6 }}
-                  className="h-[1px] bg-ivory/15 mb-8"
-                />
-
-                {/* Attribution */}
-                <div className="relative z-10 flex items-center gap-5">
-                  <div className="relative w-14 h-14 flex-shrink-0 overflow-hidden">
-                    <img
-                      src={catherineImage}
-                      alt="Catherine Laurent-Meister"
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 border border-ivory/[0.15]" />
-                  </div>
-                  <div>
-                    <p className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/70">
-                      Catherine Laurent-Meister
-                    </p>
-                    <p className="font-body text-[9px] tracking-[0.4em] uppercase text-ivory/30 mt-1">
-                      CEO & Founder
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Decorative offset borders */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="absolute -bottom-4 -right-4 w-full h-full border border-navy/[0.08] -z-10"
-              />
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.2, delay: 0.7 }}
-                className="absolute -bottom-8 -right-8 w-full h-full border border-navy/[0.04] -z-20"
-              />
+            <span className="font-body text-[10px] tracking-[0.35em] uppercase text-navy group-hover:text-navy/70 transition-colors duration-700">
+              Meet the Team
+            </span>
+            <div className="relative w-10 h-[1px] bg-navy/20 group-hover:w-14 group-hover:bg-navy/40 transition-all duration-700">
+              <ArrowRight className="absolute -right-1 -top-[5px] w-3 h-3 text-navy/30 group-hover:text-navy/60 transition-all duration-700" />
             </div>
-          </motion.div>
+          </Link>
+
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              className="w-10 h-10 border border-navy/10 flex items-center justify-center hover:border-navy/25 disabled:opacity-20 transition-all duration-500"
+            >
+              <ChevronLeft className="w-4 h-4 text-navy/50" />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              className="w-10 h-10 border border-navy/10 flex items-center justify-center hover:border-navy/25 disabled:opacity-20 transition-all duration-500"
+            >
+              <ChevronRight className="w-4 h-4 text-navy/50" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
