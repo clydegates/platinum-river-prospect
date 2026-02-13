@@ -86,7 +86,7 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
           </span>
           <div className="relative flex items-center">
             <div className="w-10 h-[0.5px] bg-ivory/20 group-hover/cta:w-14 group-hover/cta:bg-ivory/50 transition-all duration-500 origin-left" />
-            <ArrowRight className="w-3.5 h-3.5 -ml-0.5 text-ivory/20 group-hover/cta:text-ivory/50 transition-all duration-500" strokeWidth={1.5} />
+            <ArrowRight className="w-3 h-3 -ml-0.5 text-ivory/20 group-hover/cta:text-ivory/50 transition-all duration-500" strokeWidth={1} />
           </div>
         </Link>
       </div>
