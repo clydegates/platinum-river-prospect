@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef, useState, useEffect } from "react";
+import { ArrowRight } from "lucide-react";
+import { useRef } from "react";
 import beatriceImage from "@/assets/beatrice-ceo.jpg";
 import mariaElenaImage from "@/assets/maria-elena-coo.jpg";
 import frederiqueImage from "@/assets/frederique-cao.jpg";
@@ -16,30 +16,6 @@ const leaders = [
 
 const LeadershipPreview = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const updateScrollState = () => {
-    const el = scrollRef.current;
-    if (!el) return;
-    setCanScrollLeft(el.scrollLeft > 10);
-    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 10);
-  };
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    el.addEventListener("scroll", updateScrollState, { passive: true });
-    updateScrollState();
-    return () => el.removeEventListener("scroll", updateScrollState);
-  }, []);
-
-  const scroll = (direction: "left" | "right") => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const cardWidth = el.querySelector("div")?.offsetWidth ?? 300;
-    el.scrollBy({ left: direction === "left" ? -cardWidth : cardWidth, behavior: "smooth" });
-  };
 
   return (
     <section id="leadership" className="relative py-12 md:py-16 bg-ivory-dark overflow-hidden">
@@ -144,36 +120,19 @@ const LeadershipPreview = () => {
           ))}
         </div>
 
-        <div className="px-8 md:px-16 lg:px-20 max-w-7xl mx-auto mt-12 flex items-center justify-between">
-          <Link
-            to="/leadership"
-            className="group inline-flex items-center gap-4 cursor-pointer"
-          >
-            <span className="font-body text-[10px] tracking-[0.35em] uppercase text-navy group-hover:text-navy/70 transition-colors duration-700">
-              Meet the Team
-            </span>
-            <div className="relative w-10 h-[1px] bg-navy/20 group-hover:w-14 group-hover:bg-navy/40 transition-all duration-700">
-              <ArrowRight className="absolute -right-1 -top-[5px] w-3 h-3 text-navy/30 group-hover:text-navy/60 transition-all duration-700" />
-            </div>
-          </Link>
-
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => scroll("left")}
-              disabled={!canScrollLeft}
-              className="w-10 h-10 border border-navy/10 flex items-center justify-center hover:border-navy/25 disabled:opacity-20 transition-all duration-500"
+          <div className="flex items-center justify-center">
+            <Link
+              to="/leadership"
+              className="group inline-flex items-center gap-4 cursor-pointer"
             >
-              <ChevronLeft className="w-4 h-4 text-navy/50" />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              disabled={!canScrollRight}
-              className="w-10 h-10 border border-navy/10 flex items-center justify-center hover:border-navy/25 disabled:opacity-20 transition-all duration-500"
-            >
-              <ChevronRight className="w-4 h-4 text-navy/50" />
-            </button>
+              <span className="font-body text-[10px] tracking-[0.35em] uppercase text-navy group-hover:text-navy/70 transition-colors duration-700">
+                Meet the Team
+              </span>
+              <div className="relative w-10 h-[1px] bg-navy/20 group-hover:w-14 group-hover:bg-navy/40 transition-all duration-700">
+                <ArrowRight className="absolute -right-1 -top-[5px] w-3 h-3 text-navy/30 group-hover:text-navy/60 transition-all duration-700" />
+              </div>
+            </Link>
           </div>
-        </div>
       </div>
     </section>
   );
