@@ -163,7 +163,8 @@ const BusinessImpact = () => {
             </motion.div>
           </motion.div>
 
-          {/* No overlay — clean image */}
+          {/* Subtle dark overlay for text readability */}
+          <div className="absolute inset-0 bg-navy/30" />
 
           {/* Decorative vertical line */}
           <motion.div
