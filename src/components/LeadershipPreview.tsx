@@ -107,7 +107,7 @@ const LeadershipPreview = () => {
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy via-navy/80 to-transparent transition-opacity duration-700 group-hover:opacity-90" />
                   
                   <div className="absolute bottom-0 inset-x-0 p-5 text-center transition-transform duration-700 group-hover:translate-y-[-4px]">
-                    <p className="font-display text-xl md:text-2xl text-ivory leading-tight mb-1">
+                    <p className="font-display text-3xl md:text-4xl text-ivory leading-tight mb-1">
                       {leader.name}
                     </p>
                     <p className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/45 group-hover:text-ivory/65 transition-colors duration-700">
