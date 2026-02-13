@@ -131,7 +131,7 @@ const LeadershipPreview = () => {
                   {/* Gradient blur overlay at bottom */}
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy via-navy/80 to-transparent" />
                   
-                  <div className="absolute bottom-0 inset-x-0 p-5 text-left">
+                  <div className="absolute bottom-0 inset-x-0 p-5 text-center">
                     <p className="font-display text-xl md:text-2xl text-ivory leading-tight mb-1">
                       {leader.name}
                     </p>
