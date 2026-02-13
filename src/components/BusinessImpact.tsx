@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import businessImage from "@/assets/business-impact.jpg";
 
@@ -63,33 +63,24 @@ const AnimatedNumber = ({ value, suffix }: { value: string; suffix: string }) =>
   return (
     <span ref={ref}>
       {displayed}
-      <span className="text-ivory/30">{suffix}</span>
+      <span className="text-ivory/25">{suffix}</span>
     </span>
   );
 };
 
 const BusinessImpact = () => {
   return (
-    <section id="impact" className="relative bg-ivory overflow-hidden">
-      {/* Top separator */}
-      <motion.div
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 2, ease: [0.25, 0.1, 0.25, 1] }}
-        className="absolute top-0 left-0 right-0 h-[1px] bg-navy/[0.06] origin-left"
-      />
-
-      {/* Split layout: Image + Stats */}
-      <div className="grid lg:grid-cols-2">
-        {/* Left: Editorial image */}
-        <div className="relative h-[50vh] lg:h-auto lg:min-h-[700px] overflow-hidden">
+    <section id="impact" className="relative overflow-hidden">
+      {/* Full-bleed image background for the entire section */}
+      <div className="relative min-h-screen flex items-center">
+        {/* Background */}
+        <div className="absolute inset-0">
           <motion.div
             initial={{ scale: 1.08 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 5, ease: "easeOut" }}
-            className="absolute inset-0"
+            transition={{ duration: 8, ease: "easeOut" }}
+            className="w-full h-full"
           >
             <img
               src={businessImage}
@@ -97,58 +88,62 @@ const BusinessImpact = () => {
               className="w-full h-full object-cover"
             />
           </motion.div>
-          <div className="absolute inset-0 bg-navy/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-ivory lg:block hidden" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-ivory lg:hidden" />
-
-          {/* Floating headline on image */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="absolute bottom-12 left-8 md:left-16 lg:bottom-20 lg:left-20 z-10"
-          >
-            <div className="flex items-center gap-6 mb-6">
-              <div className="w-16 h-[1px] bg-ivory/30" />
-              <p className="font-body text-[10px] tracking-[0.4em] uppercase text-ivory/60">
-                Why It Matters
-              </p>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-display text-ivory leading-[1.1] tracking-[-0.01em]">
-              Measurable{" "}
-              <em className="italic font-light">Impact</em>
-            </h2>
-          </motion.div>
+          <div className="absolute inset-0 bg-navy/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/70 to-navy/90" />
         </div>
 
-        {/* Right: Stats grid */}
-        <div className="relative py-20 md:py-32 px-8 md:px-16 lg:px-20">
-          <div className="grid grid-cols-2 gap-0">
-            {impacts.map((item, index) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{
-                  duration: 0.9,
-                  delay: index * 0.12,
-                  ease: [0.25, 0.1, 0.25, 1],
-                }}
-                className="group p-6 md:p-10 lg:p-12 border border-navy/[0.06] hover:bg-ivory-dark transition-colors duration-700"
-              >
-                <p className="font-display text-5xl md:text-6xl lg:text-7xl text-navy leading-none mb-4">
-                  <AnimatedNumber value={item.stat} suffix={item.suffix} />
+        {/* Content */}
+        <div className="relative z-10 w-full py-32 md:py-48 px-8 md:px-16 lg:px-20">
+          <div className="max-w-7xl mx-auto">
+            {/* Section header */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="text-center mb-24 md:mb-32"
+            >
+              <div className="flex items-center justify-center gap-6 mb-10">
+                <div className="w-10 h-[1px] bg-ivory/15" />
+                <p className="font-body text-[10px] tracking-[0.4em] uppercase text-ivory/35">
+                  Why It Matters
                 </p>
-                <p className="font-body text-[10px] tracking-[0.35em] uppercase text-warm-gray mb-4">
-                  {item.label}
-                </p>
-                <p className="font-body text-sm font-extralight text-foreground/50 leading-[1.8] tracking-wide">
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
+                <div className="w-10 h-[1px] bg-ivory/15" />
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-[3.8rem] font-display text-ivory leading-[1.05] tracking-[-0.02em]">
+                Measurable{" "}
+                <em className="italic font-light">Impact</em>
+              </h2>
+            </motion.div>
+
+            {/* Stats grid with glass morphism */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-[1px] bg-ivory/[0.06]">
+              {impacts.map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{
+                    duration: 0.9,
+                    delay: index * 0.15,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
+                  className="group relative backdrop-blur-sm bg-navy/60 p-8 md:p-12 lg:p-14 hover:bg-navy/40 transition-colors duration-700"
+                >
+                  <p className="font-display text-5xl md:text-6xl lg:text-7xl text-ivory leading-none mb-6">
+                    <AnimatedNumber value={item.stat} suffix={item.suffix} />
+                  </p>
+                  <div className="w-10 h-[1px] bg-ivory/10 mb-5 group-hover:w-16 transition-all duration-700" />
+                  <p className="font-body text-[10px] tracking-[0.35em] uppercase text-ivory/40 mb-4">
+                    {item.label}
+                  </p>
+                  <p className="font-body text-sm font-extralight text-ivory/30 leading-[1.8] tracking-wide">
+                    {item.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
