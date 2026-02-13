@@ -5,11 +5,13 @@ import { useRef, useState, useEffect } from "react";
 import beatriceImage from "@/assets/beatrice-ceo.jpg";
 import mariaElenaImage from "@/assets/maria-elena-coo.jpg";
 import frederiqueImage from "@/assets/frederique-cao.jpg";
+import chiefWiImage from "@/assets/chief-wi-officer.jpg";
 
 const leaders = [
   { name: "Beatrice", role: "CEO & Co-Founder", image: beatriceImage },
   { name: "Maria Elena", role: "COO & Co-Founder", image: mariaElenaImage },
   { name: "Frédérique", role: "Chief Advisory Officer", image: frederiqueImage },
+  { name: "Sophie", role: "Chief WI Officer", image: chiefWiImage },
 ];
 
 const LeadershipPreview = () => {
@@ -103,7 +105,7 @@ const LeadershipPreview = () => {
       <div className="relative">
         <div
           ref={scrollRef}
-          className="flex gap-[1px] overflow-x-auto scrollbar-hide pl-8 md:pl-16 lg:pl-20 pr-8 md:pr-16 lg:pr-20"
+          className="flex gap-[1px] justify-center overflow-x-auto scrollbar-hide px-8 md:px-16 lg:px-20"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {leaders.map((leader, index) => (

@@ -6,6 +6,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import beatriceImage from "@/assets/beatrice-ceo.jpg";
 import mariaElenaImage from "@/assets/maria-elena-coo.jpg";
 import frederiqueImage from "@/assets/frederique-cao.jpg";
+import chiefWiImage from "@/assets/chief-wi-officer.jpg";
 
 const teamSections = [
   {
@@ -42,10 +43,11 @@ const teamSections = [
       },
       {
         role: "Chief WI Officer",
-        name: "To Be Announced",
-        bio: "This key leadership position will be filled by a senior executive with deep expertise in research, policy, and institutional strategy.",
-        initials: "TBD",
-        image: null,
+        name: "Sophie",
+        bio: "Senior executive with deep expertise in research, policy, and institutional strategy. Specialized in women's leadership initiatives and intergenerational workforce development across global organizations.",
+        quote: "The Women Institute is where rigorous research meets real-world impact — creating frameworks that empower organizations to unlock the full potential of their most experienced female leaders.",
+        initials: "S",
+        image: chiefWiImage,
       },
     ],
   },
