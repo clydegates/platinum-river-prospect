@@ -2,20 +2,14 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
-import catherineImage from "@/assets/catherine-laurent.jpg";
-import isabelleImage from "@/assets/isabelle-fournier.jpg";
-import elenaImage from "@/assets/elena-vasquez.jpg";
-import sarahImage from "@/assets/sarah-chen.jpg";
-import margaretImage from "@/assets/margaret-okafor.jpg";
-import anneImage from "@/assets/anne-sophie-bertrand.jpg";
+import beatriceImage from "@/assets/beatrice-ceo.jpg";
+import mariaElenaImage from "@/assets/maria-elena-coo.jpg";
+import frederiqueImage from "@/assets/frederique-cao.jpg";
 
 const leaders = [
-  { name: "Catherine Laurent-Meister", role: "Chief Executive Officer", image: catherineImage },
-  { name: "Dr. Isabelle Fournier", role: "Chief Operating Officer", image: isabelleImage },
-  { name: "Prof. Elena Vasquez-Stern", role: "Director of Research", image: elenaImage },
-  { name: "Sarah Chen-Nakamura", role: "Director of Global Partnerships", image: sarahImage },
-  { name: "Dr. Margaret Okafor", role: "Head of Training Programs", image: margaretImage },
-  { name: "Anne-Sophie Bertrand", role: "Head of Advisory", image: anneImage },
+  { name: "Beatrice", role: "CEO & Co-Founder", image: beatriceImage },
+  { name: "Maria Elena", role: "COO & Co-Founder", image: mariaElenaImage },
+  { name: "Frédérique", role: "Chief Advisory Officer", image: frederiqueImage },
 ];
 
 const LeadershipPreview = () => {
@@ -96,10 +90,10 @@ const LeadershipPreview = () => {
             transition={{ duration: 1, delay: 0.3 }}
           >
             <blockquote className="font-display text-xl md:text-2xl text-navy/60 leading-[1.6] italic">
-              "The most overlooked competitive advantage in any organization is the strategic expertise of its most experienced women."
+              "My vision for Platinum River Elite is for this formidable company to be the driving force supporting women 50+ influence in the world."
             </blockquote>
             <p className="font-body text-[9px] tracking-[0.4em] uppercase text-warm-gray mt-4">
-              — Catherine Laurent-Meister
+              — Beatrice, CEO & Co-Founder
             </p>
           </motion.div>
         </div>
@@ -107,7 +101,6 @@ const LeadershipPreview = () => {
 
       {/* Carousel */}
       <div className="relative">
-        {/* Scroll container */}
         <div
           ref={scrollRef}
           className="flex gap-[1px] overflow-x-auto scrollbar-hide pl-8 md:pl-16 lg:pl-20 pr-8 md:pr-16 lg:pr-20"
@@ -126,7 +119,6 @@ const LeadershipPreview = () => {
               }}
               className="group flex-shrink-0 w-[260px] md:w-[300px] lg:w-[320px] relative overflow-hidden cursor-pointer"
             >
-              {/* Portrait */}
               <div className="relative h-[340px] md:h-[400px] lg:h-[430px] overflow-hidden bg-navy/5">
                 <img
                   src={leader.image}
@@ -134,13 +126,10 @@ const LeadershipPreview = () => {
                   className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent" />
-
-                {/* Hover overlay with subtle line */}
                 <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/10 transition-colors duration-700" />
                 <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-ivory/0 group-hover:bg-ivory/20 transition-colors duration-700" />
               </div>
 
-              {/* Info */}
               <div className="p-6 md:p-8 bg-navy">
                 <p className="font-display text-lg md:text-xl text-ivory leading-tight mb-2">
                   {leader.name}
@@ -153,7 +142,6 @@ const LeadershipPreview = () => {
           ))}
         </div>
 
-        {/* Navigation arrows */}
         <div className="px-8 md:px-16 lg:px-20 max-w-7xl mx-auto mt-12 flex items-center justify-between">
           <Link
             to="/leadership"
