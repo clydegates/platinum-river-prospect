@@ -94,7 +94,7 @@ const StatCard = ({ item, index }: { item: typeof impacts[0]; index: number }) =
       </div>
 
       {/* Translucent background number */}
-      <span className="absolute -top-3 -right-1 font-display text-[7rem] md:text-[8rem] text-navy/[0.025] leading-none select-none pointer-events-none">
+      <span className="absolute -top-3 -right-1 font-display text-[7rem] md:text-[8rem] text-navy/[0.015] leading-none select-none pointer-events-none">
         {item.stat}
       </span>
 
@@ -111,10 +111,10 @@ const StatCard = ({ item, index }: { item: typeof impacts[0]; index: number }) =
           className="h-[1px] bg-navy/15 mb-5"
         />
 
-        <p className="font-body text-[9px] tracking-[0.4em] uppercase text-warm-gray mb-4">
+        <p className="font-body text-[10px] tracking-[0.35em] uppercase text-warm-gray mb-4">
           {item.label}
         </p>
-        <p className="font-body text-[13px] font-extralight text-foreground/40 leading-[2] tracking-wide">
+        <p className="font-body text-[13.5px] font-light text-foreground/55 leading-[1.9] tracking-wide">
           {item.description}
         </p>
       </div>
