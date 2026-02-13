@@ -149,7 +149,12 @@ const Approach = () => {
                   className="group relative p-10 md:p-16 lg:p-20 border-t border-ivory/[0.06] hover:bg-ivory/[0.03] transition-colors duration-700"
                 >
                   <div className="grid md:grid-cols-12 gap-8 md:gap-16 items-start">
-                    <div className="md:col-span-4">
+                    <div className="md:col-span-1">
+                      <span className="font-display text-6xl lg:text-7xl text-ivory/[0.06] group-hover:text-ivory/[0.1] transition-colors duration-700">
+                        {step.num}
+                      </span>
+                    </div>
+                    <div className="md:col-span-3">
                       <h3 className="text-3xl md:text-4xl font-display text-ivory leading-[1.15]">
                         {t(`approach.${step.key}.title`)}
                       </h3>
