@@ -37,14 +37,14 @@ const LeadershipPreview = () => {
 
       {/* Header + Quote */}
       <div className="px-8 md:px-16 lg:px-20 max-w-7xl mx-auto mb-20 md:mb-28">
-        <div className="grid md:grid-cols-2 gap-16 items-end">
+        <div className="flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="flex items-center gap-6 mb-10">
+            <div className="flex items-center justify-center gap-6 mb-10">
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: 64 }}
@@ -55,6 +55,13 @@ const LeadershipPreview = () => {
               <p className="font-body text-[9px] tracking-[0.45em] uppercase text-warm-gray">
                 Our Team
               </p>
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: 64 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.3 }}
+                className="h-[1px] bg-navy/15"
+              />
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-[3.75rem] font-display text-navy leading-[1.08] tracking-[-0.01em]">
               Leadership
@@ -66,13 +73,13 @@ const LeadershipPreview = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.3 }}
-            className=""
+            className="mt-10 max-w-2xl"
           >
             <blockquote className="font-display text-2xl md:text-3xl text-navy/60 leading-[1.6] italic">
               "My vision for Platinum River Elite is for this formidable company to be the driving force supporting women 50+ influence in the world."
             </blockquote>
             <p className="font-body text-[9px] tracking-[0.4em] uppercase text-warm-gray mt-4">
-              — Beatrice, CEO & Co-Founder
+              — Béatrice, CEO & Co-Founder
             </p>
           </motion.div>
         </div>
