@@ -64,16 +64,6 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
         <div className="absolute inset-0 bg-gradient-to-b from-navy/5 via-navy/30 to-navy" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/20 to-transparent" />
 
-        {/* Floating number — massive, ethereal */}
-        <motion.span
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5, delay: 0.3 + index * 0.2 }}
-          className="absolute -top-4 -left-2 font-display text-[10rem] md:text-[12rem] lg:text-[14rem] text-ivory/[0.04] select-none leading-none pointer-events-none"
-        >
-          {pillar.number}
-        </motion.span>
 
         {/* Subtitle badge — refined */}
         <motion.div
