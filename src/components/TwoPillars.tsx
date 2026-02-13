@@ -147,7 +147,7 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
 
 const TwoPillars = () => {
   return (
-    <section id="services" className="relative py-32 md:py-48 px-8 md:px-16 lg:px-20 bg-navy overflow-hidden">
+    <section id="services" className="relative py-12 md:py-16 px-8 md:px-16 lg:px-20 bg-navy overflow-hidden">
       {/* Decorative corner accents */}
       <motion.div
         initial={{ opacity: 0 }}
