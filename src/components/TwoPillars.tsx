@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import pillarAdvisory from "@/assets/pillar-advisory.jpg";
+import pillarInstitute from "@/assets/pillar-institute.jpg";
 
 const pillars = [
   {
@@ -6,12 +8,14 @@ const pillars = [
     title: "Advisory & Training",
     description:
       "We partner with executive teams to design retention strategies, leadership development frameworks, and performance models that integrate the expertise of senior women into organizational growth. Our approach is grounded in business outcomes — not advocacy.",
+    image: pillarAdvisory,
   },
   {
     number: "02",
     title: "Women Institute",
     description:
       "A global platform for research, thought leadership, and strategic dialogue. The Institute convenes senior leaders, policymakers, and academics to shape the future of intergenerational workforce strategy with rigor and independence.",
+    image: pillarInstitute,
   },
 ];
 
@@ -66,22 +70,35 @@ const TwoPillars = () => {
                 delay: index * 0.2,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
-              className="group relative p-10 md:p-16 lg:p-20 border border-ivory/[0.06] hover:bg-ivory/[0.03] transition-colors duration-700"
+              className="group relative border border-ivory/[0.06] overflow-hidden"
             >
-              <span className="font-display text-7xl lg:text-8xl text-ivory/[0.06] block mb-8 transition-colors duration-700 group-hover:text-ivory/[0.1]">
-                {pillar.number}
-              </span>
-              <h3 className="text-3xl md:text-4xl font-display text-ivory mb-8 leading-[1.15]">
-                {pillar.title}
-              </h3>
-              <p className="font-body text-base font-extralight text-ivory/45 leading-[1.9] tracking-wide">
-                {pillar.description}
-              </p>
-              <div className="mt-10">
-                <span className="inline-flex items-center gap-3 font-body text-[10px] tracking-[0.3em] uppercase text-ivory/30 group-hover:text-ivory/50 transition-colors duration-500">
-                  Learn More
-                  <span className="inline-block w-4 h-[1px] bg-current transition-all duration-500 group-hover:w-8" />
+              {/* Background image with hover zoom */}
+              <div className="relative h-56 md:h-72 overflow-hidden">
+                <motion.img
+                  src={pillar.image}
+                  alt={pillar.title}
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-navy/30 via-navy/50 to-navy" />
+                <span className="absolute top-6 left-8 font-display text-7xl lg:text-8xl text-ivory/[0.1]">
+                  {pillar.number}
                 </span>
+              </div>
+
+              {/* Content */}
+              <div className="p-10 md:p-16 lg:p-20">
+                <h3 className="text-3xl md:text-4xl font-display text-ivory mb-8 leading-[1.15]">
+                  {pillar.title}
+                </h3>
+                <p className="font-body text-base font-extralight text-ivory/45 leading-[1.9] tracking-wide">
+                  {pillar.description}
+                </p>
+                <div className="mt-10">
+                  <span className="inline-flex items-center gap-3 font-body text-[10px] tracking-[0.3em] uppercase text-ivory/30 group-hover:text-ivory/50 transition-colors duration-500">
+                    Learn More
+                    <span className="inline-block w-4 h-[1px] bg-current transition-all duration-500 group-hover:w-8" />
+                  </span>
+                </div>
               </div>
             </motion.div>
           ))}
