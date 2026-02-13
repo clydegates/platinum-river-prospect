@@ -121,7 +121,7 @@ const LeadershipPreview = () => {
               }}
               className="group flex-shrink-0 w-[260px] md:w-[280px] lg:w-[290px] cursor-pointer"
             >
-              <div className="rounded-2xl overflow-hidden transition-all duration-700 hover:shadow-[0_12px_50px_-10px_hsl(var(--navy)/0.5)] hover:scale-[1.03]">
+              <div className="rounded-2xl overflow-hidden transition-all duration-700 hover:shadow-[0_12px_50px_-10px_hsl(var(--navy)/0.5)]">
                 <div className="relative h-[380px] md:h-[420px] lg:h-[440px] overflow-hidden rounded-2xl">
                   <img
                     src={leader.image}
