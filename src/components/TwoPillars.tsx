@@ -45,7 +45,7 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
         delay: index * 0.2,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group relative overflow-hidden border border-ivory/[0.08]"
+      className="group relative overflow-hidden border border-ivory/[0.08] transition-all duration-500 hover:border-ivory/20 hover:shadow-[0_8px_40px_-12px_rgba(255,255,255,0.06)]"
     >
       {/* Image area */}
       <div className="relative h-[238px] md:h-[289px] overflow-hidden">
