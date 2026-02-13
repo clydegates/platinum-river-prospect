@@ -36,7 +36,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-heading text-ivory leading-[1.1] mb-8"
+            className="text-5xl md:text-6xl lg:text-7xl font-display text-ivory leading-[1.1] mb-8"
           >
             Strategic Leadership for the Next Era
           </motion.h1>

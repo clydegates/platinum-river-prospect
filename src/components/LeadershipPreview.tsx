@@ -16,7 +16,7 @@ const LeadershipPreview = () => {
             <p className="font-body text-xs tracking-[0.3em] uppercase text-warm-gray mb-4">
               Our Team
             </p>
-            <h2 className="text-4xl md:text-5xl font-heading text-navy leading-[1.15] mb-8">
+            <h2 className="text-4xl md:text-5xl font-display text-navy leading-[1.15] mb-8">
               Leadership
             </h2>
             <p className="font-body text-base font-extralight text-foreground/60 leading-[1.8] mb-10">
@@ -38,7 +38,7 @@ const LeadershipPreview = () => {
             className="md:col-span-6 md:col-start-7"
           >
             <div className="bg-navy p-12 md:p-16">
-              <blockquote className="font-heading text-2xl md:text-3xl text-ivory leading-[1.4] italic mb-8">
+              <blockquote className="font-display text-2xl md:text-3xl text-ivory leading-[1.4] italic mb-8">
                 "The most overlooked competitive advantage in any organization is the strategic expertise of its most experienced women."
               </blockquote>
               <div className="w-10 h-[1px] bg-ivory/20 mb-6" />

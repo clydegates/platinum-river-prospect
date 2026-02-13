@@ -16,7 +16,7 @@ const StrategicContext = () => {
             <p className="font-body text-xs tracking-[0.3em] uppercase text-warm-gray mb-4">
               The Imperative
             </p>
-            <h2 className="text-4xl md:text-5xl font-heading text-navy leading-[1.15]">
+            <h2 className="text-4xl md:text-5xl font-display text-navy leading-[1.15]">
               A Structural Shift Demands Strategic Action
             </h2>
           </motion.div>

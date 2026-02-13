@@ -38,7 +38,7 @@ const BusinessImpact = () => {
           <p className="font-body text-xs tracking-[0.3em] uppercase text-warm-gray mb-4">
             Why It Matters
           </p>
-          <h2 className="text-4xl md:text-5xl font-heading text-navy leading-[1.15] max-w-lg">
+          <h2 className="text-4xl md:text-5xl font-display text-navy leading-[1.15] max-w-lg">
             Measurable Business Impact
           </h2>
         </motion.div>
@@ -53,8 +53,8 @@ const BusinessImpact = () => {
               transition={{ duration: 0.7, delay: index * 0.1 }}
               className="border-t border-navy/10 pt-8"
             >
-              <span className="font-heading text-sm text-warm-gray mb-4 block">{item.number}</span>
-              <h3 className="text-2xl md:text-3xl font-heading text-navy mb-4">
+              <span className="font-display text-sm text-warm-gray mb-4 block">{item.number}</span>
+              <h3 className="text-2xl md:text-3xl font-display text-navy mb-4">
                 {item.title}
               </h3>
               <p className="font-body text-base font-extralight text-foreground/60 leading-[1.8]">

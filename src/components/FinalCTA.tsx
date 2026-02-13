@@ -21,7 +21,7 @@ const FinalCTA = () => {
           <p className="font-body text-xs tracking-[0.3em] uppercase text-ivory/40 mb-6">
             Get In Touch
           </p>
-          <h2 className="text-4xl md:text-6xl font-heading text-ivory leading-[1.1] mb-8">
+          <h2 className="text-4xl md:text-6xl font-display text-ivory leading-[1.1] mb-8">
             Start the Conversation
           </h2>
           <p className="text-lg font-body font-extralight text-ivory/50 leading-relaxed mb-12 max-w-xl mx-auto">
