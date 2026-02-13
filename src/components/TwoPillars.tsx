@@ -80,12 +80,13 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
         </p>
 
         {/* CTA */}
-        <Link to={pillar.link} className="relative inline-flex items-center gap-3 cursor-pointer group/cta">
-          <span className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/30 group-hover/cta:text-ivory/60 transition-colors duration-500">
+        <Link to={pillar.link} className="relative inline-flex items-center gap-4 cursor-pointer group/cta">
+          <span className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/40 group-hover/cta:text-ivory transition-colors duration-500">
             Explore
           </span>
-          <div className="relative w-8 h-[1px] bg-ivory/15 group-hover/cta:w-12 group-hover/cta:bg-ivory/30 transition-all duration-500">
-            <ArrowRight className="absolute -right-1 -top-[5px] w-3 h-3 text-ivory/30 group-hover/cta:text-ivory/60 transition-all duration-500" />
+          <div className="relative flex items-center">
+            <div className="w-10 h-[0.5px] bg-ivory/20 group-hover/cta:w-14 group-hover/cta:bg-ivory/50 transition-all duration-500 origin-left" />
+            <ArrowRight className="w-3.5 h-3.5 -ml-0.5 text-ivory/20 group-hover/cta:text-ivory/50 transition-all duration-500" strokeWidth={1.5} />
           </div>
         </Link>
       </div>
