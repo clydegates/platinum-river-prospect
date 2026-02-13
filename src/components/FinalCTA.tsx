@@ -1,34 +1,17 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const FinalCTA = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-
   return (
-    <section
-      id="contact"
-      className="relative py-32 md:py-44 px-8 md:px-16 bg-navy overflow-hidden"
-      ref={containerRef}
-    >
+    <section id="contact" className="relative py-32 md:py-44 px-8 md:px-16 bg-navy overflow-hidden">
       {/* Subtle radial glow */}
       <div className="absolute inset-0 opacity-20">
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
-          style={{
-            background:
-              "radial-gradient(circle, hsl(215 40% 28%) 0%, transparent 70%)",
-          }}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
+          style={{ background: 'radial-gradient(circle, hsl(215 40% 28%) 0%, transparent 70%)' }}
         />
       </div>
 
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         <motion.div
-          style={{ y }}
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -42,8 +25,7 @@ const FinalCTA = () => {
             Start the Conversation
           </h2>
           <p className="text-lg font-body font-extralight text-ivory/50 leading-relaxed mb-12 max-w-xl mx-auto">
-            We welcome inquiries from organizations committed to strategic
-            workforce performance.
+            We welcome inquiries from organizations committed to strategic workforce performance.
           </p>
           <a
             href="mailto:contact@platinumriverelite.com"
