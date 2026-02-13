@@ -36,7 +36,7 @@ const LeadershipPreview = () => {
       />
 
       {/* Header + Quote */}
-      <div className="px-8 md:px-16 lg:px-20 max-w-7xl mx-auto mb-20 md:mb-28">
+      <div className="px-8 md:px-16 lg:px-20 max-w-7xl mx-auto mb-10 md:mb-14">
         <div className="flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
