@@ -79,10 +79,10 @@ const StatCard = ({ item, index }: { item: typeof impacts[0]; index: number }) =
         delay: index * 0.15,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group relative p-8 md:p-10 lg:p-14 overflow-hidden"
+      className="group relative p-8 md:p-10 lg:p-14 overflow-hidden cursor-default transition-all duration-700"
     >
       {/* Hover background */}
-      <div className="absolute inset-0 bg-navy/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+      <div className="absolute inset-0 bg-navy/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
       {/* Cell borders — only inner edges */}
       <div className="absolute inset-0 border border-navy/[0.05]" />
@@ -94,12 +94,12 @@ const StatCard = ({ item, index }: { item: typeof impacts[0]; index: number }) =
       </div>
 
       {/* Translucent background number */}
-      <span className="absolute -top-3 -right-1 font-display text-[7rem] md:text-[8rem] text-navy/[0.015] leading-none select-none pointer-events-none">
+      <span className="absolute -top-3 -right-1 font-display text-[7rem] md:text-[8rem] text-navy/[0.015] leading-none select-none pointer-events-none transition-all duration-700 group-hover:text-navy/[0.04] group-hover:scale-110">
         {item.stat}
       </span>
 
       <div className="relative z-10">
-        <p className="font-display text-5xl md:text-6xl lg:text-[4.5rem] text-navy leading-none mb-5 tracking-[-0.02em]">
+        <p className="font-display text-5xl md:text-6xl lg:text-[4.5rem] text-navy leading-none mb-5 tracking-[-0.02em] transition-transform duration-700 group-hover:-translate-y-1">
           <AnimatedNumber value={item.stat} suffix={item.suffix} />
         </p>
 
@@ -108,7 +108,7 @@ const StatCard = ({ item, index }: { item: typeof impacts[0]; index: number }) =
           whileInView={{ width: 32 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
-          className="h-[1px] bg-navy/15 mb-5"
+          className="h-[1px] bg-navy/15 mb-5 group-hover:bg-navy/30 transition-colors duration-700"
         />
 
         <p className="font-body text-[10px] tracking-[0.35em] uppercase text-navy/70 mb-4">
