@@ -29,7 +29,7 @@ const SiteHeader = () => {
               key={item}
               href={`#${item.toLowerCase()}`}
               className={`transition-colors duration-500 ${
-                scrolled ? "text-warm-gray hover:text-navy" : "text-ivory/80 hover:text-ivory"
+                scrolled ? "text-navy hover:text-navy-soft" : "text-ivory/80 hover:text-ivory"
               }`}
             >
               {item}
