@@ -60,16 +60,6 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
         {/* Bottom gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-navy" />
 
-        {/* Number */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 + index * 0.2 }}
-          className="absolute top-6 left-6"
-        >
-          <span className="font-display text-sm text-ivory/50">{pillar.number}</span>
-        </motion.div>
 
       </div>
 
