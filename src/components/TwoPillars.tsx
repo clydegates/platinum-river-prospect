@@ -71,18 +71,6 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
           <span className="font-display text-sm text-ivory/50">{pillar.number}</span>
         </motion.div>
 
-        {/* Subtitle */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 + index * 0.2 }}
-          className="absolute bottom-6 left-8"
-        >
-          <span className="font-body text-[9px] tracking-[0.35em] uppercase text-ivory/50">
-            {pillar.subtitle}
-          </span>
-        </motion.div>
       </div>
 
       {/* Content area */}
