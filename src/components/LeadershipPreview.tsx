@@ -102,7 +102,7 @@ const LeadershipPreview = () => {
                   <img
                     src={leader.image}
                     alt={leader.name}
-                    className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy via-navy/80 to-transparent transition-opacity duration-700 group-hover:opacity-90" />
                   
