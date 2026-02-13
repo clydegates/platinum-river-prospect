@@ -119,20 +119,20 @@ const LeadershipPreview = () => {
             </motion.div>
           ))}
         </div>
+      </div>
 
-          <div className="flex items-center justify-center">
-            <Link
-              to="/leadership"
-              className="group inline-flex items-center gap-4 cursor-pointer"
-            >
-              <span className="font-body text-[10px] tracking-[0.35em] uppercase text-navy group-hover:text-navy/70 transition-colors duration-700">
-                Meet the Team
-              </span>
-              <div className="relative w-10 h-[1px] bg-navy/20 group-hover:w-14 group-hover:bg-navy/40 transition-all duration-700">
-                <ArrowRight className="absolute -right-1 -top-[5px] w-3 h-3 text-navy/30 group-hover:text-navy/60 transition-all duration-700" />
-              </div>
-            </Link>
+      <div className="flex items-center justify-center mt-12">
+        <Link
+          to="/leadership"
+          className="group inline-flex items-center gap-4 cursor-pointer"
+        >
+          <span className="font-body text-[10px] tracking-[0.35em] uppercase text-navy group-hover:text-navy/70 transition-colors duration-700">
+            Meet the Team
+          </span>
+          <div className="relative w-10 h-[1px] bg-navy/20 group-hover:w-14 group-hover:bg-navy/40 transition-all duration-700">
+            <ArrowRight className="absolute -right-1 -top-[5px] w-3 h-3 text-navy/30 group-hover:text-navy/60 transition-all duration-700" />
           </div>
+        </Link>
       </div>
     </section>
   );
