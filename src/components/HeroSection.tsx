@@ -42,18 +42,19 @@ const HeroSection = () => {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-20 pb-24 md:pb-32 pt-40 w-full">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto text-center">
           {/* Overline */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <div className="flex items-center gap-6 mb-10">
+            <div className="flex items-center justify-center gap-6 mb-10">
               <div className="w-16 h-[1px] bg-ivory/30" />
               <p className="font-body text-[10px] tracking-[0.4em] uppercase text-ivory/40">
                 Strategic Advisory · Executive Training
               </p>
+              <div className="w-16 h-[1px] bg-ivory/30" />
             </div>
           </motion.div>
 
@@ -89,9 +90,8 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.4, delay: 1 }}
-            className="flex items-start gap-6 mb-14"
+            className="mb-14 flex justify-center"
           >
-            <div className="w-[1px] h-16 bg-ivory/20 mt-1 flex-shrink-0 hidden sm:block" />
             <p className="text-base md:text-lg font-body font-extralight text-ivory/55 max-w-lg leading-[1.8] tracking-wide">
               Advising global organizations on unlocking the strategic value of women 50+ in today's evolving workforce.
             </p>
@@ -102,7 +102,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.3, ease: [0.25, 0.1, 0.25, 1] }}
-            className="flex items-center gap-8"
+            className="flex items-center justify-center"
           >
             <a
               href="#contact"
