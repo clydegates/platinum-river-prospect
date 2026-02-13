@@ -111,7 +111,7 @@ const StatCard = ({ item, index }: { item: typeof impacts[0]; index: number }) =
           className="h-[1px] bg-navy/15 mb-5"
         />
 
-        <p className="font-body text-[10px] tracking-[0.35em] uppercase text-warm-gray mb-4">
+        <p className="font-body text-[10px] tracking-[0.35em] uppercase text-navy/70 mb-4">
           {item.label}
         </p>
         <p className="font-body text-[13.5px] font-light text-foreground/55 leading-[1.9] tracking-wide">
