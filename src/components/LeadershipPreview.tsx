@@ -105,7 +105,7 @@ const LeadershipPreview = () => {
       <div className="relative">
         <div
           ref={scrollRef}
-          className="flex gap-[1px] justify-center overflow-x-auto scrollbar-hide px-8 md:px-16 lg:px-20"
+          className="flex gap-5 justify-center overflow-x-auto scrollbar-hide px-8 md:px-16 lg:px-20"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {leaders.map((leader, index) => (
@@ -119,26 +119,25 @@ const LeadershipPreview = () => {
                 delay: index * 0.1,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group flex-shrink-0 w-[260px] md:w-[300px] lg:w-[320px] relative overflow-hidden cursor-pointer"
+              className="group flex-shrink-0 w-[260px] md:w-[280px] lg:w-[290px] cursor-pointer"
             >
-              <div className="relative h-[340px] md:h-[400px] lg:h-[430px] overflow-hidden bg-navy/5">
-                <img
-                  src={leader.image}
-                  alt={leader.name}
-                  className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent" />
-                <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/10 transition-colors duration-700" />
-                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-ivory/0 group-hover:bg-ivory/20 transition-colors duration-700" />
-              </div>
+              <div className="bg-navy rounded-2xl overflow-hidden p-3 pb-6 transition-shadow duration-700 hover:shadow-[0_8px_40px_-12px_hsl(var(--navy)/0.4)]">
+                <div className="relative h-[300px] md:h-[340px] lg:h-[360px] overflow-hidden rounded-xl">
+                  <img
+                    src={leader.image}
+                    alt={leader.name}
+                    className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
+                  />
+                </div>
 
-              <div className="p-6 md:p-8 bg-navy">
-                <p className="font-display text-lg md:text-xl text-ivory leading-tight mb-2">
-                  {leader.name}
-                </p>
-                <p className="font-body text-[9px] tracking-[0.35em] uppercase text-ivory/35">
-                  {leader.role}
-                </p>
+                <div className="pt-5 px-2 text-center">
+                  <p className="font-display text-xl md:text-2xl text-ivory leading-tight mb-1.5">
+                    {leader.name}
+                  </p>
+                  <p className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/40">
+                    {leader.role}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}
