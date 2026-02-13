@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const SiteFooter = () => {
   const currentYear = new Date().getFullYear();
@@ -14,19 +15,22 @@ const SiteFooter = () => {
       />
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="font-display text-lg text-ivory/50 tracking-wide">
+        <Link to="/" className="font-display text-lg text-ivory/50 tracking-wide hover:text-ivory/70 transition-colors duration-500">
           Platinum River Elite
-        </div>
+        </Link>
         <div className="flex items-center gap-8">
-          <a href="#about" className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/25 hover:text-ivory/50 transition-colors duration-500">
-            About
-          </a>
-          <a href="#services" className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/25 hover:text-ivory/50 transition-colors duration-500">
-            Services
-          </a>
-          <a href="#contact" className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/25 hover:text-ivory/50 transition-colors duration-500">
+          <Link to="/approach" className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/25 hover:text-ivory/50 transition-colors duration-500">
+            Approach
+          </Link>
+          <Link to="/institute" className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/25 hover:text-ivory/50 transition-colors duration-500">
+            Institute
+          </Link>
+          <Link to="/leadership" className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/25 hover:text-ivory/50 transition-colors duration-500">
+            Leadership
+          </Link>
+          <Link to="/contact" className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/25 hover:text-ivory/50 transition-colors duration-500">
             Contact
-          </a>
+          </Link>
         </div>
         <p className="font-body text-[10px] text-ivory/20 tracking-widest">
           © {currentYear} Platinum River Elite
