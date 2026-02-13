@@ -4,39 +4,6 @@ import boardroomImage from "@/assets/strategic-boardroom.jpg";
 const StrategicContext = () => {
   return (
     <section id="about" className="relative bg-ivory overflow-hidden">
-      {/* Full-width editorial image */}
-      <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
-        <motion.div
-          initial={{ scale: 1.1 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 6, ease: "easeOut" }}
-          className="w-full h-full"
-        >
-          <img
-            src={boardroomImage}
-            alt="Executive boardroom at dusk"
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ivory" />
-        <div className="absolute inset-0 bg-navy/20" />
-
-        {/* Floating stat overlay */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="absolute bottom-12 right-8 md:right-20 bg-navy/90 backdrop-blur-sm p-8 md:p-12 hidden sm:block"
-        >
-          <p className="font-display text-5xl md:text-6xl text-ivory leading-none mb-2">2030</p>
-          <p className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/50 max-w-[180px]">
-            The tipping point for workforce demographics
-          </p>
-        </motion.div>
-      </div>
-
       {/* Text content */}
       <div className="relative py-24 md:py-36 px-8 md:px-16 lg:px-20">
         {/* Decorative elements */}
