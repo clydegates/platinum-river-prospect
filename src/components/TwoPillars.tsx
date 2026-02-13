@@ -15,7 +15,7 @@ const TwoPillars = () => {
           <p className="font-body text-xs tracking-[0.3em] uppercase text-ivory/40 mb-4">
             Our Approach
           </p>
-          <h2 className="text-4xl md:text-5xl font-display text-ivory leading-[1.15] max-w-lg">
+          <h2 className="text-4xl md:text-5xl font-heading text-ivory leading-[1.15] max-w-lg">
             Two Pillars of Impact
           </h2>
         </motion.div>
@@ -28,8 +28,8 @@ const TwoPillars = () => {
             transition={{ duration: 0.8 }}
             className="bg-navy p-10 md:p-16"
           >
-            <span className="font-display text-6xl text-ivory/10 block mb-6">01</span>
-            <h3 className="text-3xl md:text-4xl font-display text-ivory mb-6">
+            <span className="font-heading text-6xl text-ivory/10 block mb-6">01</span>
+            <h3 className="text-3xl md:text-4xl font-heading text-ivory mb-6">
               Advisory & Training
             </h3>
             <p className="font-body text-base font-extralight text-ivory/55 leading-[1.8]">
@@ -44,8 +44,8 @@ const TwoPillars = () => {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="bg-navy p-10 md:p-16"
           >
-            <span className="font-display text-6xl text-ivory/10 block mb-6">02</span>
-            <h3 className="text-3xl md:text-4xl font-display text-ivory mb-6">
+            <span className="font-heading text-6xl text-ivory/10 block mb-6">02</span>
+            <h3 className="text-3xl md:text-4xl font-heading text-ivory mb-6">
               Women Institute
             </h3>
             <p className="font-body text-base font-extralight text-ivory/55 leading-[1.8]">
