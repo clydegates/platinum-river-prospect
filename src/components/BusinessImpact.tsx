@@ -79,7 +79,7 @@ const StatCard = ({ item, index }: { item: typeof impacts[0]; index: number }) =
         delay: index * 0.15,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group relative p-8 md:p-10 lg:p-14 overflow-hidden cursor-default transition-all duration-700"
+      className="group relative p-8 md:p-10 lg:p-14 overflow-hidden cursor-default transition-all duration-700 hover:scale-105"
     >
       {/* Hover background */}
       <div className="absolute inset-0 bg-navy/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
