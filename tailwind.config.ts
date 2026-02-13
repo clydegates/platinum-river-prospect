@@ -14,7 +14,6 @@ export default {
     },
     fontFamily: {
       sans: ['Outfit', 'system-ui', 'sans-serif'],
-      display: ['Graphik', 'Outfit', 'system-ui', 'sans-serif'],
       serif: ['Cormorant Garamond', 'Georgia', 'serif'],
     },
     extend: {
