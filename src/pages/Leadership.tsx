@@ -2,6 +2,13 @@ import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import catherineImage from "@/assets/catherine-laurent.jpg";
+import isabelleImage from "@/assets/isabelle-fournier.jpg";
+import elenaImage from "@/assets/elena-vasquez.jpg";
+import sarahImage from "@/assets/sarah-chen.jpg";
+import margaretImage from "@/assets/margaret-okafor.jpg";
+import anneImage from "@/assets/anne-sophie-bertrand.jpg";
 
 const team = [
   {
@@ -9,36 +16,42 @@ const team = [
     name: "Catherine Laurent-Meister",
     bio: "Over 30 years of experience in global executive leadership, organizational transformation, and strategic consulting for Fortune 500 companies. Former senior partner at McKinsey & Company, board advisor to multiple FTSE 100 corporations.",
     initials: "CL",
+    image: catherineImage,
   },
   {
     role: "Chief Operating Officer",
     name: "Dr. Isabelle Fournier",
     bio: "Former Chief People Officer of a leading European multinational. Expert in workforce analytics, talent strategy, and organizational design. PhD in Organizational Psychology from INSEAD.",
     initials: "IF",
+    image: isabelleImage,
   },
   {
     role: "Director of Research",
     name: "Prof. Elena Vasquez-Stern",
     bio: "Distinguished academic and researcher specializing in intergenerational leadership and workforce demographics. Published over 80 papers in leading management journals. Visiting professor at London Business School.",
     initials: "EV",
+    image: elenaImage,
   },
   {
     role: "Director of Global Partnerships",
     name: "Sarah Chen-Nakamura",
     bio: "Two decades of experience building institutional partnerships across APAC, EMEA, and the Americas. Former UN Women advisory board member and OECD policy contributor.",
     initials: "SC",
+    image: sarahImage,
   },
   {
     role: "Head of Training Programs",
     name: "Dr. Margaret Okafor",
     bio: "Expert in executive education and leadership development. Former Dean of Executive Programs at a top-tier European business school. Designed proprietary training frameworks adopted by 200+ organizations globally.",
     initials: "MO",
+    image: margaretImage,
   },
   {
     role: "Head of Advisory",
     name: "Anne-Sophie Bertrand",
     bio: "Senior strategist with 25 years of experience advising boards and C-suites on governance, succession planning, and talent retention. Former Senior VP at a leading global professional services firm.",
     initials: "AB",
+    image: anneImage,
   },
 ];
 
@@ -89,19 +102,20 @@ const Leadership = () => {
             <div className="grid md:grid-cols-2 gap-0">
               {team.map((member, index) => (
                 <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-80px" }}
-                  transition={{ duration: 1, delay: index * 0.1 }}
-                  className="group relative p-10 md:p-14 lg:p-16 border border-navy/[0.06] hover:bg-ivory-dark transition-colors duration-700"
-                >
-                  {/* Initials */}
-                  <div className="w-16 h-16 flex items-center justify-center bg-navy mb-8">
-                    <span className="font-display text-xl text-ivory tracking-wider">
-                      {member.initials}
-                    </span>
-                  </div>
+                   key={member.name}
+                   initial={{ opacity: 0, y: 50 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   viewport={{ once: true, margin: "-80px" }}
+                   transition={{ duration: 1, delay: index * 0.1 }}
+                   className="group relative p-10 md:p-14 lg:p-16 border border-navy/[0.06] hover:bg-ivory-dark transition-colors duration-700"
+                 >
+                   {/* Professional Photo */}
+                   <Avatar className="w-32 h-32 mb-8">
+                     <AvatarImage src={member.image} alt={member.name} className="object-cover" />
+                     <AvatarFallback className="bg-navy text-ivory text-lg font-display">
+                       {member.initials}
+                     </AvatarFallback>
+                   </Avatar>
 
                   <p className="font-body text-[10px] tracking-[0.35em] uppercase text-warm-gray mb-3">
                     {member.role}
