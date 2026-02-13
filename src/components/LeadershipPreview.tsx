@@ -121,21 +121,20 @@ const LeadershipPreview = () => {
               }}
               className="group flex-shrink-0 w-[260px] md:w-[280px] lg:w-[290px] cursor-pointer"
             >
-              <div className="bg-navy rounded-2xl overflow-hidden transition-shadow duration-700 hover:shadow-[0_8px_40px_-12px_hsl(var(--navy)/0.4)]">
+              <div className="rounded-2xl overflow-hidden transition-all duration-700 hover:shadow-[0_12px_50px_-10px_hsl(var(--navy)/0.5)] hover:scale-[1.03]">
                 <div className="relative h-[380px] md:h-[420px] lg:h-[440px] overflow-hidden rounded-2xl">
                   <img
                     src={leader.image}
                     alt={leader.name}
-                    className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
                   />
-                  {/* Gradient blur overlay at bottom */}
-                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy via-navy/80 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy via-navy/80 to-transparent transition-opacity duration-700 group-hover:opacity-90" />
                   
-                  <div className="absolute bottom-0 inset-x-0 p-5 text-center">
+                  <div className="absolute bottom-0 inset-x-0 p-5 text-center transition-transform duration-700 group-hover:translate-y-[-4px]">
                     <p className="font-display text-xl md:text-2xl text-ivory leading-tight mb-1">
                       {leader.name}
                     </p>
-                    <p className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/45">
+                    <p className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/45 group-hover:text-ivory/65 transition-colors duration-700">
                       {leader.role}
                     </p>
                   </div>
