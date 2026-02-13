@@ -164,7 +164,7 @@ const BusinessImpact = () => {
           </motion.div>
 
           {/* Bottom gradient for text readability */}
-          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-navy/70 via-navy/40 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-navy/95 via-navy/70 to-transparent" />
 
           {/* Decorative vertical line */}
           <motion.div
