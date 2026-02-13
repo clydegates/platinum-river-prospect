@@ -163,10 +163,9 @@ const BusinessImpact = () => {
             </motion.div>
           </motion.div>
 
-          {/* Subtle overlay — preserving image clarity */}
-          <div className="absolute inset-0 bg-navy/15" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy/25 via-transparent to-ivory/80 lg:block hidden" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-ivory/70 lg:hidden" />
+          {/* Minimal overlay — seamless blend */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent via-60% to-ivory lg:block hidden" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-ivory lg:hidden" />
 
           {/* Decorative vertical line */}
           <motion.div
