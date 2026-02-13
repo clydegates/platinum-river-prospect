@@ -64,7 +64,7 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
       </div>
 
       {/* Content area */}
-      <div className="relative bg-navy border-t border-ivory/[0.06] p-8 md:p-10">
+      <div className="relative bg-navy p-8 md:p-10">
         <motion.h3
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
