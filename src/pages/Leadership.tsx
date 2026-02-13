@@ -14,7 +14,7 @@ const teamSections = [
     members: [
       {
         role: "CEO & Co-Founder",
-        name: "Beatrice",
+        name: "Béatrice",
         bio: "Extensive experience promoting the image of seniors in Asia. Co-founder and owner of Platinum Angels Management (senior models agency) in Singapore in 2019, a leader in this niche market in the region. Career in the Ethics and Compliance departments of several financial institutions, Global Team Leader.",
         quote: "My vision for Platinum River Elite is for this formidable company to be the driving force supporting women 50+ influence in the world. Its strategy and leading its growth and development are my primary objectives and mission as CEO.",
         initials: "B",
