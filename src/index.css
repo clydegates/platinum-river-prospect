@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,53 +6,50 @@
 
 @layer base {
   :root {
-    /* Deep midnight blue palette */
-    --background: 212 72% 14%;
-    --foreground: 210 20% 92%;
+    --background: 0 0% 100%;
+    --foreground: 215 50% 10%;
 
-    --card: 212 66% 18%;
-    --card-foreground: 210 20% 92%;
+    --card: 210 25% 97%;
+    --card-foreground: 215 50% 10%;
 
-    --popover: 212 66% 18%;
-    --popover-foreground: 210 20% 92%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 50% 10%;
 
-    /* Primary: off-white on deep blue */
-    --primary: 210 20% 92%;
-    --primary-foreground: 212 72% 14%;
+    --primary: 215 70% 22%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary: accent blue */
-    --secondary: 212 66% 25%;
-    --secondary-foreground: 210 20% 92%;
+    --secondary: 210 30% 95%;
+    --secondary-foreground: 215 50% 10%;
 
-    --muted: 212 50% 20%;
-    --muted-foreground: 210 15% 60%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 42 50% 55%;
-    --accent-foreground: 212 72% 14%;
+    --accent: 215 70% 22%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 212 40% 22%;
-    --input: 212 40% 22%;
-    --ring: 42 50% 55%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 215 70% 22%;
 
-    --radius: 0.25rem;
+    --radius: 0.375rem;
 
-    --sidebar-background: 212 72% 12%;
-    --sidebar-foreground: 210 20% 92%;
-    --sidebar-primary: 210 20% 92%;
-    --sidebar-primary-foreground: 212 72% 14%;
-    --sidebar-accent: 212 66% 25%;
-    --sidebar-accent-foreground: 210 20% 92%;
-    --sidebar-border: 212 40% 22%;
-    --sidebar-ring: 42 50% 55%;
+    /* Custom */
+    --navy: 215 70% 22%;
+    --navy-light: 215 55% 30%;
+    --navy-deep: 215 80% 12%;
+    --ice: 210 25% 97%;
 
-    /* Custom tokens */
-    --gold: 42 50% 55%;
-    --gold-foreground: 212 72% 14%;
-    --surface: 212 60% 16%;
-    --surface-elevated: 212 55% 20%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 215 50% 10%;
+    --sidebar-primary: 215 70% 22%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 30% 95%;
+    --sidebar-accent-foreground: 215 50% 10%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 215 70% 22%;
   }
 }
 
@@ -60,54 +57,37 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
-
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'DM Serif Display', Georgia, serif;
   }
 }
 
 @layer utilities {
-  .font-serif-display {
-    font-family: 'Playfair Display', Georgia, serif;
+  .font-display {
+    font-family: 'DM Serif Display', Georgia, serif;
   }
-
   .font-body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
   }
-
-  .text-gold {
-    color: hsl(var(--gold));
+  .bg-navy {
+    background-color: hsl(var(--navy));
   }
-
-  .border-gold {
-    border-color: hsl(var(--gold));
+  .bg-navy-deep {
+    background-color: hsl(var(--navy-deep));
   }
-
-  .bg-surface {
-    background-color: hsl(var(--surface));
+  .bg-ice {
+    background-color: hsl(var(--ice));
   }
-
-  .bg-surface-elevated {
-    background-color: hsl(var(--surface-elevated));
+  .text-navy {
+    color: hsl(var(--navy));
   }
-
-  .gradient-hero {
-    background: linear-gradient(
-      180deg,
-      hsl(212 72% 14%) 0%,
-      hsl(212 66% 11%) 100%
-    );
+  .text-navy-light {
+    color: hsl(var(--navy-light));
   }
-
-  .gradient-section {
-    background: linear-gradient(
-      180deg,
-      hsl(212 60% 16%) 0%,
-      hsl(212 72% 14%) 100%
-    );
+  .border-navy {
+    border-color: hsl(var(--navy));
   }
 }

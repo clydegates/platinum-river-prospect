@@ -3,20 +3,33 @@ import { motion } from "framer-motion";
 const SiteHeader = () => {
   return (
     <motion.header
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 0.2 }}
-      className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 flex items-center justify-between"
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
     >
-      <div className="font-serif text-lg tracking-wide text-foreground">
-        Platinum River <span className="text-gold">Elite</span>
+      <div className="max-w-6xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
+        <div className="font-display text-xl text-navy tracking-wide">
+          Platinum River Elite
+        </div>
+        <nav className="hidden md:flex items-center gap-8 font-body text-sm text-muted-foreground">
+          <a href="#about" className="hover:text-navy transition-colors">About</a>
+          <a href="#services" className="hover:text-navy transition-colors">Services</a>
+          <a href="#impact" className="hover:text-navy transition-colors">Impact</a>
+          <a
+            href="#contact"
+            className="px-5 py-2 bg-navy text-primary-foreground rounded-sm text-sm font-medium hover:bg-navy-light transition-colors"
+          >
+            Contact
+          </a>
+        </nav>
+        <a
+          href="#contact"
+          className="md:hidden px-4 py-2 bg-navy text-primary-foreground rounded-sm text-xs font-body font-medium"
+        >
+          Contact
+        </a>
       </div>
-      <a
-        href="#contact"
-        className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300"
-      >
-        Contact
-      </a>
     </motion.header>
   );
 };
