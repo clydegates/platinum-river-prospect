@@ -1,11 +1,25 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const LeadershipPreview = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+  const yLeft = useTransform(scrollYProgress, [0, 1], [80, -80]);
+  const yRight = useTransform(scrollYProgress, [0, 1], [-80, 80]);
+
   return (
-    <section id="leadership" className="py-28 md:py-40 px-8 md:px-16 bg-ivory-dark">
+    <section
+      id="leadership"
+      className="py-28 md:py-40 px-8 md:px-16 bg-ivory-dark overflow-hidden"
+      ref={containerRef}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-12 gap-12 md:gap-20 items-center">
           <motion.div
+            style={{ y: yLeft }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -31,6 +45,7 @@ const LeadershipPreview = () => {
           </motion.div>
 
           <motion.div
+            style={{ y: yRight }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
