@@ -1,8 +1,21 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const TwoPillars = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+  const yCard1 = useTransform(scrollYProgress, [0, 1], [80, -80]);
+  const yCard2 = useTransform(scrollYProgress, [0, 1], [-80, 80]);
+
   return (
-    <section id="services" className="py-28 md:py-40 px-8 md:px-16 bg-navy">
+    <section
+      id="services"
+      className="py-28 md:py-40 px-8 md:px-16 bg-navy overflow-hidden"
+      ref={containerRef}
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -22,6 +35,7 @@ const TwoPillars = () => {
 
         <div className="grid md:grid-cols-2 gap-[1px] bg-ivory/10">
           <motion.div
+            style={{ y: yCard1 }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
@@ -38,6 +52,7 @@ const TwoPillars = () => {
           </motion.div>
 
           <motion.div
+            style={{ y: yCard2 }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
