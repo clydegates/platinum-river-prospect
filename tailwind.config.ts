@@ -13,8 +13,8 @@ export default {
       },
     },
     fontFamily: {
-      sans: ['Inter', 'system-ui', 'sans-serif'],
-      serif: ['Playfair Display', 'Georgia', 'serif'],
+      sans: ['Outfit', 'system-ui', 'sans-serif'],
+      serif: ['Cormorant Garamond', 'Georgia', 'serif'],
     },
     extend: {
       colors: {
@@ -51,13 +51,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          foreground: "hsl(var(--gold-foreground))",
+        navy: {
+          DEFAULT: "hsl(var(--navy))",
+          soft: "hsl(var(--navy-soft))",
         },
-        surface: {
-          DEFAULT: "hsl(var(--surface))",
-          elevated: "hsl(var(--surface-elevated))",
+        ivory: {
+          DEFAULT: "hsl(var(--ivory))",
+          dark: "hsl(var(--ivory-dark))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
