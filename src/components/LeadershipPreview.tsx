@@ -85,13 +85,9 @@ const LeadershipPreview = () => {
         </div>
       </div>
 
-      {/* Carousel */}
-      <div className="relative">
-        <div
-          ref={scrollRef}
-          className="flex gap-5 justify-center overflow-x-auto scrollbar-hide px-8 md:px-16 lg:px-20"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
+      {/* Grid */}
+      <div className="px-8 md:px-16 lg:px-20 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
           {leaders.map((leader, index) => (
             <motion.div
               key={leader.name}
@@ -103,10 +99,10 @@ const LeadershipPreview = () => {
                 delay: index * 0.1,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group flex-shrink-0 w-[260px] md:w-[280px] lg:w-[290px] cursor-pointer"
+              className="group cursor-pointer"
             >
               <div className="rounded-2xl overflow-hidden transition-all duration-700 hover:shadow-[0_12px_50px_-10px_hsl(var(--navy)/0.5)]">
-                <div className="relative h-[380px] md:h-[420px] lg:h-[440px] overflow-hidden rounded-2xl">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
                   <img
                     src={leader.image}
                     alt={leader.name}
@@ -114,11 +110,11 @@ const LeadershipPreview = () => {
                   />
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy via-navy/80 to-transparent transition-opacity duration-700 group-hover:opacity-90" />
                   
-                  <div className="absolute bottom-0 inset-x-0 p-5 text-center transition-transform duration-700 group-hover:translate-y-[-4px]">
-                    <p className="font-display text-3xl md:text-4xl text-ivory leading-tight mb-1">
+                  <div className="absolute bottom-0 inset-x-0 p-4 md:p-5 text-center transition-transform duration-700 group-hover:translate-y-[-4px]">
+                    <p className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl text-ivory leading-tight mb-1">
                       {leader.name}
                     </p>
-                    <p className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/45 group-hover:text-ivory/65 transition-colors duration-700">
+                    <p className="font-body text-[8px] md:text-[10px] tracking-[0.3em] uppercase text-ivory/45 group-hover:text-ivory/65 transition-colors duration-700">
                       {leader.role}
                     </p>
                   </div>
