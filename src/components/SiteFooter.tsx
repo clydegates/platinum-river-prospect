@@ -14,11 +14,11 @@ const SiteFooter = () => {
         className="absolute top-0 left-8 right-8 md:left-16 md:right-16 h-[1px] bg-ivory/[0.06] origin-left"
       />
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto flex flex-col items-center gap-6">
         <Link to="/" className="font-display text-lg text-ivory/50 tracking-wide hover:text-ivory/70 transition-colors duration-500">
           Platinum River Elite
         </Link>
-        <div className="flex items-center gap-8">
+        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
           <Link to="/approach" className="font-body text-[10px] tracking-[0.3em] uppercase text-ivory/25 hover:text-ivory/50 transition-colors duration-500">
             Approach
           </Link>
